@@ -54,8 +54,11 @@ def provision_endpoint():
 
   ###### BEGIN PINMAP ######
 
-  # OUTPUT - Intercom "open" trigger
-  DOOR_KEY = 0
+  # OUTPUT - Magnet aquarium lock
+  AQUARIUM_LOCK = 0
+
+  # INPUT - Aquarium open button
+  AQUARIUM_BUTTON = 1
 
   # OUTPUT - EL Wire power
   SIGN = 4
@@ -96,11 +99,12 @@ def provision_endpoint():
   pin_modes = [1] * ENDPOINTPP_GPIO_SIZE
 
   # Apply specific configuration
-  pin_modes[DOOR_KEY] = 1
+  pin_modes[AQUARIUM_LOCK] = 1
   pin_modes[SIGN] = 1
   pin_modes[RED_DOOR_LOCK] = 1
 
   pin_modes[AQUARIUM_DOOR] = 0
+  pin_modes[AQUARIUM_BUTTON] = 0
   pin_modes[RED_DOOR] = 0
   pin_modes[PORTAL_DOOR] = 0
   pin_modes[PRESCENE_SWITCH] = 0
